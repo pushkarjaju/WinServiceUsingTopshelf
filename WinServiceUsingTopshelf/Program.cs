@@ -11,9 +11,9 @@ namespace WinServiceUsingTopshelf
             {
                 x.Service<Heartbit>(s =>
                 {
-                    s.ConstructUsing(heartbit => new Heartbit());
-                    s.WhenStarted(heartbit => heartbit.Start());
-                    s.WhenStopped(heartbit => heartbit.Stop());
+                    s.ConstructUsing(heartbit => new Heartbit()); // Create heartbit obj
+                    s.WhenStarted(heartbit => heartbit.Start());  // call start method to start service
+                    s.WhenStopped(heartbit => heartbit.Stop());   // Call Stop method to stop service
                 });
 
                 x.RunAsLocalSystem();

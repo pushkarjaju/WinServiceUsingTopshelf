@@ -11,7 +11,7 @@ namespace WinServiceUsingTopshelf
         public Heartbit()
         {
             _timer = new Timer(1000) { AutoReset = true };
-            _timer.Elapsed += TimerElapsed;
+            _timer.Elapsed += TimerElapsed;  // Every second it will call this event
         }
 
         private void TimerElapsed(object sender, ElapsedEventArgs e)
